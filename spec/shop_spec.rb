@@ -4,6 +4,13 @@ describe Shop do
   subject (:shop) { described_class.new }
   
   describe 'getting checkout totals' do
+    it 'items must be entered as a string' do 
+      shop.checkout("A")
+      expect("A").to be_an_instance_of(String)
+    end
+
+    
+    
     it 'when item A is entered, the price of 50 returns' do
       expect(shop.checkout('A')).to eq 50
     end
