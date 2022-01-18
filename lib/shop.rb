@@ -1,19 +1,24 @@
 class Shop 
 
   def checkout(items)
-    
-    if items == 'A'
-      return 50
-    elsif items == 'B'
-      return 30
-    elsif items == 'C'
-      return 20 
-    elsif items == 'D'
-      return 15
-    else
-      return -1
-    end 
-  
-  end 
 
+    split_up_letters = items.chars
+
+      replacements = {
+        "A" => 50,
+        "B" => 30,
+        "C" => 20,
+        "D" => 15,
+      }
+    
+      each_letter_price = split_up_letters.map { |e|
+          replacements.fetch(e, e)
+      }
+    
+      if each_letter_price.all?(Integer)
+        return each_letter_price.sum
+      else
+        return -1
+      end 
+  end 
 end 

@@ -9,7 +9,9 @@ describe Shop do
       expect("A").to be_an_instance_of(String)
     end
 
-    
+    it 'anything other than a capitalised string returns -1' do 
+      expect(shop.checkout("abc")).to eq -1
+    end 
     
     it 'when item A is entered, the price of 50 returns' do
       expect(shop.checkout('A')).to eq 50
@@ -27,10 +29,13 @@ describe Shop do
       expect(shop.checkout('D')).to eq 15
     end
 
+    it 'when AA is entered, the price of 100 returns' do 
+      expect(shop.checkout('AA')).to eq 100
+    end 
 
-
-
+    it 'when AAC is entered, the price of 120 returns' do 
+      expect(shop.checkout('AAC')).to eq 120
+    end
   end  
-
 end 
  
