@@ -15,7 +15,7 @@ class Shop
           replacements.fetch(e, e)
       }
     
-      if each_letter_price.all?(Integer)
+      if each_letter_price.all?(Integer) && (each_letter_price.empty? == false)
         return each_letter_price.sum
       else
         return -1
