@@ -40,6 +40,14 @@ describe Shop do
     it 'when AAC is entered, the price of 120 returns' do 
       expect(shop.checkout('AAC')).to eq 120
     end
+
+    it 'when AAA is entered the price is 130, not 150' do 
+      expect(shop.checkout('AAA')).to eq 130
+    end
+
+    it 'when AAAC is entered the price is 150' do 
+      expect(shop.checkout('AAAC')).to eq 150
+    end
   end  
 end 
  
